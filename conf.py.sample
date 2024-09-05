@@ -1,0 +1,58 @@
+"""
+Config File
+"""
+import logging
+
+# 本地启动端口
+# 查看端口是否被占用 netstat -ant|grep 9552
+DEF_LOCAL_PORT = 9552
+
+# 是否使用无头浏览器模式
+DEF_USE_HEADLESS = True
+
+# 调试模式
+# DEF_DEBUG = True
+DEF_DEBUG = False
+
+# 浏览器路径，置空时取 Chrome 的默认路径
+# DEF_PATH_BROWSER = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' # noqa
+# DEF_PATH_BROWSER = '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge' # noqa
+DEF_PATH_BROWSER = ''
+
+# DEF_PATH_USER_DATA = '/Users/{MAC_NAME}/Library/Application Support/Google/Chrome' # noqa
+# DEF_PATH_USER_DATA = '/opt/app/chain/auto_selenium/chrome_profile'
+DEF_PATH_USER_DATA = '/opt/app/chain/auto_drissionpage/chrome_profile'
+DEF_PWD = 'default_password@'
+
+DEF_MSG_FAIL = 'FAIL'
+
+DEF_NUM_TRY = 5
+
+FILENAME_LOG = 'run.log'
+
+# 遇到异常发钉钉消息，如果没有，置空，则不发钉钉消息
+DEF_DING_TOKEN = ''  # noqa
+
+# 记录账号状态信息
+DEF_PATH_DATA_STATUS = 'datas/status'
+DEF_HEADER_STATUS = 'account,n_points_today,n_points,n_referrals,n_completed'
+
+############################################################
+# PROXY: ClashX -> Proxy
+DEF_AUTO_PROXY = False
+
+# 记录每天的 PROXY 使用情况
+DEF_PATH_DATA_PROXY = 'datas/proxy'
+############################################################
+# ClashX API
+DEF_CLASH_API_PORT = 9090
+DEF_CLASH_API_SECRETKEY = 'API_SECRETKEY'
+############################################################
+# 配置日志
+s_format = '%(asctime)s %(levelname)s %(message)s'
+logging.basicConfig(
+    filename=FILENAME_LOG, level=logging.INFO,
+    format=s_format,
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logger = logging.getLogger(__name__)

@@ -1,0 +1,6 @@
+venv
+conf.py
+*.log
+*.pyc
+datas
+.DS_Store
